@@ -1,0 +1,246 @@
+{
+  "main": {
+    "id": "0e2c4317d13b5785",
+    "type": "split",
+    "children": [
+      {
+        "id": "6f3a6e91375917d8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cd0ffb51800f2595",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Self0S/Practice/User Journey.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "User Journey"
+            }
+          },
+          {
+            "id": "a714a769c28e1405",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Digital Colonialism - taking up space..md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Digital Colonialism - taking up space."
+            }
+          },
+          {
+            "id": "643962de06ab1233",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "a dream of a different kind of media.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "a dream of a different kind of media"
+            }
+          },
+          {
+            "id": "9ed7ac44c858c979",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.4"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5665bbbca80ea9d2",
+    "type": "split",
+    "children": [
+      {
+        "id": "8701e0422774ba10",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4cbb15d7f9b36e23",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "cd18d14a925161df",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "2452723add783447",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1fdfa208e160381a",
+    "type": "split",
+    "children": [
+      {
+        "id": "28119eebd24b12b0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9e0e7ec68c3b9697",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Writings/Substack/Weather Formations/Stop Trying to Network, Start Trying to Storm.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Stop Trying to Network, Start Trying to Storm"
+            }
+          },
+          {
+            "id": "264a0e4c89b02f17",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Writings/Substack/Weather Formations/Stop Trying to Network, Start Trying to Storm.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Stop Trying to Network, Start Trying to Storm"
+            }
+          },
+          {
+            "id": "6091ce71b17c699b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "eca78a6b5f1cc23e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Writings/Substack/Weather Formations/Stop Trying to Network, Start Trying to Storm.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Stop Trying to Network, Start Trying to Storm"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "9ed7ac44c858c979",
+  "lastOpenFiles": [
+    "README.md",
+    "Axioms.md",
+    "2025-02windsurfrules-lines.md",
+    "Practice/Transformation Records/2025-02-02_paradox_action_plan.md",
+    "Practice/Transformation Records/2025-02-02_cheatsheet.md",
+    "Practice/Transformation Records/2025-02-02_transformation_index.md",
+    "Practice/Transformation Records/paradox_resolution_tools.md",
+    "Practice/Transformation Records/signal_analysis_template.md",
+    "Practice/Transformation Records/2025-02-02_convo_blockage_analysis.md",
+    "windsurfrules-lines.md",
+    "Practice/Transformation Records/example_transformation.md",
+    "Practice/Transformation Records/metadata.md",
+    "Practice/Transformation Records/2025-02-02 convo.md",
+    "Self0S/Writings/Substack/Core Concepts/All Stories are Manipulation.md",
+    "Self0S/Writings/Substack/Weather Formations/The Problem With Network Thinking.md",
+    "Self0S/Writings/Substack/Human Potential Series/Your Creativity Is Too Safe.md",
+    "Self0S/Writings/Substack/Creative Technology/Teaching Creative Writing Through Pattern Recognition.md",
+    "Self0S/Writings/Substack/Weather Formations/Learning to Storm.md",
+    "Self0S/Writings/Substack/AI Analysis/Anthropomorphic Interfaces - Signal of System Manipulation.md",
+    "Self0S/Writings/Substack/Human Potential Series/A Definition of Transformation.md",
+    "Self0S/Writings/Substack/Core Concepts/The Interface for Awareness.md",
+    "Self0S/Writings/Substack/Weather Formations/when concrete burns.md",
+    "Self0S/Writings/Substack/Core Concepts/AI as Mind Measurement.md",
+    "Self0S/Writings/Substack/Core Concepts/System Architects - Our Interface Point.md",
+    "Self0S/Writings/Substack/Core Concepts/Notes From Your AI.md",
+    "Self0S/Writings/Substack/Weather Formations/When Information Became Weather.md",
+    "Self0S/Writings/Substack/Human Potential Series",
+    "Self0S/Writings/Substack/Creative Technology",
+    "Self0S/Writings/Substack/Clairvoyance Series",
+    "Self0S/Writings/Substack/Weather Formations",
+    "Self0S/Writings/Substack/Core Concepts",
+    "Self0S/Writings/Substack/AI Analysis",
+    "Self0S/Writings/Substack/Wealth",
+    "Self0S/Writings/Substack",
+    "Self0S/Writings",
+    "Self0S/Technical/td_fresco_cracks.frag"
+  ]
+}

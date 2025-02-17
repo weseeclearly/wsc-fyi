@@ -1,0 +1,3 @@
+
+
+https://hipcityreg.substack.com/
