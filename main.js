@@ -1,32 +1,11 @@
+// Add subtle parallax effect to links
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll behavior
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Form submissions
-    const contactForm = document.getElementById('contact');
-    const newsletterForm = document.getElementById('newsletter');
-
-    [contactForm, newsletterForm].forEach(form => {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            // Add your form submission logic here
-            const formData = new FormData(form);
-            console.log('Form submitted:', Object.fromEntries(formData));
-            // Reset form
-            form.reset();
-        });
-    });
-
-    // Add subtle parallax effect to links
     const links = document.querySelectorAll('.link-item');
+    if (!links) return;
+    
     links.forEach(link => {
+        if (!link) return;
+        
         link.addEventListener('mousemove', (e) => {
             const rect = link.getBoundingClientRect();
             const x = e.clientX - rect.left;
