@@ -40,3 +40,10 @@ yarn-error.log*
 
 # Optional eslint cache
 .eslintcache
+
+# Backup files
+*.backup
+*_backup_*
+
+# Obsidian
+.obsidian/

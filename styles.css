@@ -1,36 +1,61 @@
 :root {
-    --bg-color: #fff;
-    --text-color: #333;
-    --accent-color: rgba(0, 0, 0, 0.8);
+    /* Base colors with deep indigo gradient */
+    --bg-color: linear-gradient(135deg, 
+        #0a1525 0%,    /* Deep indigo base */
+        #152a45 100%   /* Rich navy */
+    );
+    --text-color: #f4efe3;    /* Warm washi paper */
     
-    /* Border colors inspired by aged silk and mineral pigments */
-    --border-outer: rgba(121, 110, 88, 0.8);    /* Deep umber */
-    --border-inner: rgba(158, 144, 122, 0.6);   /* Warm grey */
+    /* Bold woodblock-inspired palette */
+    --contrast-gold: #d4af37;      /* Rich kinpaku gold */
+    --bright-sky: #4d8cda;         /* Luminous sky blue */
+    --contrast-scarlet: #c73c1f;   /* Vermillion red */
+    --sacred-saffron: #d98e04;     /* Aged gold */
+    --deep-indigo: #1a2a4f;        /* True deep blue */
     
-    /* Background colors inspired by natural pigments */
-    --bg-links: rgba(243, 239, 230, 0.7);       /* Warm ivory */
-    --bg-spotify: rgba(230, 238, 236, 0.6);     /* Celadon */
-    --bg-contact: rgba(238, 235, 240, 0.6);     /* Wisteria */
-    --bg-newsletter: rgba(242, 238, 228, 0.6);  /* Pale ochre */
+    /* Strong contrast colors for borders and accents */
+    --border-outer: 2px solid var(--bright-sky);
+    --border-inner: 2px solid var(--contrast-scarlet);
+    --border-ethereal: 2px solid var(--ethereal-blue);
+    --border-plum: 2px solid var(--luxury-plum);
     
-    /* Pattern colors (will be applied to white/black patterns) */
-    --pattern-links: rgba(158, 144, 122, 0.08);      /* Warm grey */
-    --pattern-spotify: rgba(121, 110, 88, 0.06);     /* Deep umber */
-    --pattern-contact: rgba(144, 134, 156, 0.07);    /* Soft purple */
-    --pattern-newsletter: rgba(158, 144, 122, 0.08); /* Warm grey */
+    /* Border colors with increased sophistication */
+    --border-outer: rgba(180, 195, 210, 0.25);
+    --border-inner: rgba(140, 165, 191, 0.15);
     
-    /* Hover states */
-    --hover-bg: rgba(255, 255, 255, 0.9);
+    /* Background colors with depth and texture */
+    --bg-links: rgba(245, 248, 251, 0.06);
+    --bg-spotify: rgba(235, 242, 248, 0.05);
+    --bg-contact: rgba(240, 245, 250, 0.04);
+    --bg-newsletter: rgba(242, 247, 251, 0.05);
+    --bg-section: rgba(255, 255, 255, 0.03);
     
+    /* Link item colors with increased contrast */
+    --link-bg-1: rgba(255, 255, 255, 0.08);
+    --link-bg-2: rgba(255, 255, 255, 0.06);
+    --link-bg-3: rgba(255, 255, 255, 0.04);
+    
+    /* Hover states with luminous quality */
+    --link-hover-1: rgba(255, 255, 255, 0.12);
+    --link-hover-2: rgba(255, 255, 255, 0.10);
+    --link-hover-3: rgba(255, 255, 255, 0.08);
+    
+    /* Pattern intensity */
+    --pattern-intensity: 0.08;
+    
+    /* Typography remains unchanged */
+    --font-title: 'Quintessential', serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --letter-spacing-title: 0.02em;
+    --letter-spacing-section: 0.1em;
+    
+    /* Transitions */
     --transition-time: 0.3s;
-    
-    /* These will be set when you have the pattern URLs */
-    --pattern-links-url: none;
-    --pattern-spotify-url: none;
-    --pattern-contact-url: none;
-    --pattern-newsletter-url: none;
 }
 
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -38,7 +63,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -52,9 +77,19 @@ body {
 .container {
     width: 100%;
     max-width: 600px;
-    padding: 1.5rem;
+    padding: 3rem 2rem;
     position: relative;
-    margin: 0 auto;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 21, 37, 0.95) 0%,
+        rgba(21, 42, 69, 0.92) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid var(--bright-sky);
+    box-shadow: 
+        0 0 60px rgba(26, 42, 79, 0.4),
+        inset 0 0 60px rgba(77, 140, 218, 0.08);
 }
 
 .container::before,
@@ -67,55 +102,262 @@ body {
     left: 0;
     border: 1px solid var(--border-outer);
     pointer-events: none;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.container::before {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 2px solid var(--contrast-gold);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.85;
 }
 
 .container::after {
-    top: 12px;
-    right: 12px;
-    bottom: 12px;
-    left: 12px;
-    border: 1px solid var(--border-inner);
-}
-
-header {
-    text-align: center;
-    margin-bottom: 4rem;
-    position: relative;
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+    border: 2px solid var(--sacred-saffron);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.7;
 }
 
 h1 {
-    font-weight: 300;
-    font-size: 1.5rem;
-    letter-spacing: 0.15em;
+    font-family: var(--font-title);
+    font-weight: var(--font-weight-normal);
+    font-size: 2rem;
+    letter-spacing: var(--letter-spacing-title);
     color: var(--accent-color);
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.title {
+    position: relative;
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    letter-spacing: var(--letter-spacing-title);
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 
+        0 0 1px rgba(255, 255, 255, 0.95),
+        0 0 4px rgba(212, 175, 55, 0.6),  /* Gold shimmer */
+        0 0 8px rgba(77, 106, 154, 0.4);  /* Indigo depth */
+    background: none;
+    z-index: 10;
+}
+
+.title::after {
+    display: none;
+}
+
+@keyframes titlePulse {
+    0%, 100% {
+        opacity: 0.95;
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 
+            0 0 1px rgba(255, 255, 255, 1),
+            0 0 20px var(--bright-sky),
+            0 0 40px rgba(179, 230, 255, 0.7);
+    }
+}
+
+/* Section headers with unique accent colors */
+.section-header {
+    position: relative;
+    padding-left: 1rem;
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-light);
+    text-transform: lowercase;
+    letter-spacing: var(--letter-spacing-section);
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.section-header::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 70%;
+    opacity: 0.9;
+}
+
+/* Unique colors for different sections */
+.section-listening .section-header::before {
+    background: var(--ethereal-blue);
+}
+
+.section-contact .section-header::before {
+    background: var(--contrast-scarlet);
+}
+
+.section-newsletter .section-header::before {
+    background: var(--sacred-saffron);
+}
+
+/* Remove the gradient border since we're using distinct colors */
+.section-header {
+    border-image: none;
+}
+
+/* Pattern Base Styles */
+.links, .spotify-embed, .contact, .newsletter {
+    position: relative;
+    overflow: hidden;
+}
+
+.pattern-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.pattern-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.07;
+    mix-blend-mode: plus-lighter;
+}
+
+.section-content {
+    position: relative;
+    z-index: 2;
+}
+
+.links, .spotify-embed, .contact {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-inner);
+    border-radius: 2px;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+    background-color: var(--bg-section);
 }
 
 .links {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    background: var(--bg-links);
-    padding: 1.5rem;
-    border-radius: 2px;
-    position: relative;
-    border: 1px solid var(--border-inner);
-    background-image: var(--pattern-links-url, none);
-    background-size: 100px 100px;
-    background-repeat: repeat;
-    background-position: center;
+    background-color: var(--bg-links);
+    background-image: 
+        repeating-linear-gradient(45deg, 
+            rgba(121, 110, 88, 0.1) 0px,
+            rgba(121, 110, 88, 0.1) 1px,
+            transparent 1px,
+            transparent 10px
+        ),
+        repeating-linear-gradient(-45deg,
+            rgba(121, 110, 88, 0.1) 0px,
+            rgba(121, 110, 88, 0.1) 1px,
+            transparent 1px,
+            transparent 10px
+        );
 }
 
+.spotify-embed {
+    background-color: var(--bg-spotify);
+    background-image: 
+        repeating-linear-gradient(60deg,
+            rgba(121, 110, 88, 0.1) 0px,
+            rgba(121, 110, 88, 0.1) 1px,
+            transparent 1px,
+            transparent 15px
+        );
+}
+
+.contact {
+    background-color: var(--bg-contact);
+    background-image: 
+        repeating-linear-gradient(90deg,
+            rgba(121, 110, 88, 0.1) 0px,
+            rgba(121, 110, 88, 0.1) 1px,
+            transparent 1px,
+            transparent 20px
+        );
+}
+
+.newsletter {
+    margin: 4rem 0;
+    padding: 1.5rem;
+    border: 1px solid var(--border-inner);
+    border-radius: 2px;
+    background-color: var(--bg-newsletter);
+    position: relative;
+    overflow: hidden;
+}
+
+.links svg,
+.spotify-embed svg,
+.contact svg,
+.newsletter svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.08;
+    transition: opacity var(--transition-time) ease;
+    pointer-events: none;
+}
+
+.links:hover svg,
+.spotify-embed:hover svg,
+.contact:hover svg,
+.newsletter:hover svg {
+    opacity: 0.15;
+}
+
+/* Individual Link Items */
 .link-item {
+    display: block;
     text-decoration: none;
     color: var(--text-color);
     padding: 1.2rem;
-    border: 1px solid var(--border-inner);
+    margin-bottom: 1.2rem;
+    border: 1px solid rgba(77, 140, 218, 0.2);
     border-radius: 2px;
-    transition: all var(--transition-time) ease;
     position: relative;
-    display: block;
-    margin-bottom: 1rem;
-    background: var(--hover-bg);
+    transition: all var(--transition-time) ease;
+    overflow: hidden;
+    background: rgba(10, 21, 37, 0.7);
+    box-shadow: 
+        0 2px 15px rgba(70, 90, 110, 0.03),
+        0 1px 3px rgba(70, 90, 110, 0.01);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.link-item:nth-child(1) {
+    background-color: var(--link-bg-1);
+}
+
+.link-item:nth-child(2) {
+    background-color: var(--link-bg-2);
+}
+
+.link-item:nth-child(3) {
+    background-color: var(--link-bg-3);
 }
 
 .link-item:last-child {
@@ -132,7 +374,21 @@ h1 {
     border: 1px solid var(--border-outer);
     border-radius: 2px;
     opacity: 0;
-    transition: opacity var(--transition-time) ease;
+    transition: all var(--transition-time) ease;
+}
+
+.link-item:hover {
+    transform: translateY(-1px);
+    border-left: 2px solid var(--sacred-saffron);
+    filter: brightness(110%);
+    background: rgba(21, 42, 69, 0.8);
+    border-color: var(--sacred-saffron);
+    box-shadow: 0 0 20px rgba(217, 142, 4, 0.15);  /* Aged gold glow */
+}
+
+.link-item:active {
+    transform: translateY(1px);
+    filter: brightness(95%);
 }
 
 .link-item:hover::before {
@@ -140,295 +396,170 @@ h1 {
 }
 
 .link-text {
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-normal);
     font-size: 1rem;
-    margin-bottom: 0.2rem;
-    display: block;
+    display: inline-block;
 }
 
 .link-description {
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-light);
     font-size: 0.85rem;
     opacity: 0.7;
-    display: block;
+    display: inline-block;
 }
 
-section {
-    margin: 4rem 0;
-    position: relative;
-}
-
-.section-header {
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
-    font-size: 0.85rem;
-    text-transform: lowercase;
-    opacity: 0.8;
-    position: relative;
-    padding-left: 1.2rem;
-}
-
-.section-header::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 6px;
-    height: 1px;
-    background: var(--border-outer);
-}
-
-.spotify-container {
-    margin: 4rem 0;
-    border-radius: 2px;
-    overflow: hidden;
-    position: relative;
-    padding: 1.5rem;
-    border: 1px solid var(--border-inner);
-    background: var(--bg-spotify);
-    background-image: var(--pattern-spotify-url, none);
-    background-size: 100px 100px;
-    background-repeat: repeat;
-    background-position: center;
-}
-
-.contact-form {
-    background: var(--bg-contact);
-    padding: 1.5rem;
-    border-radius: 2px;
-    position: relative;
-    border: 1px solid var(--border-inner);
-    background-image: var(--pattern-contact-url, none);
-    background-size: 100px 100px;
-    background-repeat: repeat;
-    background-position: center;
-}
-
-.newsletter {
-    background: var(--bg-newsletter);
-    padding: 1.5rem;
-    border-radius: 2px;
-    position: relative;
-    border: 1px solid var(--border-inner);
-    margin-top: 2rem;
-    background-image: var(--pattern-newsletter-url, none);
-    background-size: 100px 100px;
-    background-repeat: repeat;
-    background-position: center;
-}
-
+/* Form Styles */
 form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin: 2rem 0;
 }
 
 input, textarea {
+    width: 100%;
     padding: 0.8rem;
     border: 1px solid var(--border-inner);
     border-radius: 2px;
-    background: var(--hover-bg);
-    transition: all var(--transition-time) ease;
-    width: 100%;
-    font-size: 1rem;
-}
-
-input:focus, textarea:focus {
-    outline: none;
-    border-color: var(--border-outer);
-}
-
-textarea {
-    min-height: 100px;
-    resize: vertical;
+    background: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-body);
 }
 
 button {
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem;
     border: 1px solid var(--border-inner);
     border-radius: 2px;
-    background: var(--hover-bg);
-    color: var(--accent-color);
+    background: transparent;
+    color: var(--text-color);
     cursor: pointer;
     transition: all var(--transition-time) ease;
-    position: relative;
-    font-size: 1rem;
+    font-family: var(--font-body);
 }
 
-button::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    right: -4px;
-    bottom: -4px;
-    left: -4px;
-    border: 1px solid var(--border-outer);
+button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-inner);
     border-radius: 2px;
-    opacity: 0;
-    transition: opacity var(--transition-time) ease;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-family: inherit;
+    font-size: 0.9rem;
 }
 
-button:hover::before {
-    opacity: 1;
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
-#newsletter {
-    flex-direction: row;
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
 }
 
-#newsletter input {
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     flex: 1;
 }
 
-#newsletter button {
-    width: 50px;
+.checkbox-container input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
 }
 
-/* Tablet and larger */
-@media (min-width: 768px) {
-    body {
-        padding: 2rem;
-    }
-
-    .container {
-        padding: 3.5rem;
-    }
-
-    h1 {
-        font-size: 2rem;
-        letter-spacing: 0.2em;
-    }
-
-    .links,
-    .spotify-container,
-    .contact-form,
-    .newsletter {
-        padding: 2.5rem;
-    }
-
-    .link-item {
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .link-text {
-        font-size: 1.1rem;
-        margin-bottom: 0.3rem;
-    }
-
-    .link-description {
-        font-size: 0.9rem;
-    }
-
-    .section-header {
-        font-size: 0.9rem;
-        margin-bottom: 2rem;
-    }
-
-    input, textarea {
-        padding: 1rem;
-    }
-
-    button {
-        padding: 1rem 1.5rem;
-    }
-
-    .spotify-container {
-        margin: 4rem 0;
-    }
-
-    .newsletter {
-        margin-top: 4rem;
-    }
+.checkbox-container label {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    cursor: pointer;
+    user-select: none;
 }
 
-/* Adjustments for very small screens */
-@media (max-width: 360px) {
-    body {
-        padding: 0.5rem;
-    }
-
-    .container {
-        padding: 1rem;
-    }
-
-    .links,
-    .spotify-container,
-    .contact-form,
-    .newsletter {
-        padding: 1rem;
-    }
-
-    .link-item {
-        padding: 1rem;
-        margin-bottom: 0.8rem;
-    }
-
-    .link-text {
-        font-size: 0.95rem;
-    }
-
-    .link-description {
-        font-size: 0.8rem;
-    }
-
-    .section-header {
-        font-size: 0.8rem;
-        margin-bottom: 1rem;
-    }
-
-    input, textarea {
-        padding: 0.7rem;
-    }
-
-    button {
-        padding: 0.7rem 1rem;
-    }
+.contact-form button {
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--border-inner);
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all var(--transition-time) ease;
+    white-space: nowrap;
 }
 
-/* Container border adjustments for different screen sizes */
-@media (max-width: 768px) {
-    .container::after {
-        top: 8px;
-        right: 8px;
-        bottom: 8px;
-        left: 8px;
-    }
+.contact-form button:hover {
+    background-color: var(--bg-links);
+    transform: translateY(-1px);
 }
 
-@media (max-width: 360px) {
-    .container::after {
-        top: 6px;
-        right: 6px;
-        bottom: 6px;
-        left: 6px;
-    }
+.contact-form button:active {
+    transform: translateY(1px);
 }
 
+/* Responsive Adjustments */
 @media (max-width: 600px) {
-    body {
-        padding: 1rem;
-    }
-    
     .container {
-        padding: 2rem;
-    }
-    
-    h1 {
-        font-size: 1.5rem;
-    }
-    
-    .link-item {
         padding: 1rem;
+        margin: 1rem;
+    }
+
+    .contact-form {
+        gap: 1rem;
+    }
+
+    .form-footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .contact-form button {
+        width: 100%;
+        padding: 0.8rem 1rem;
+    }
+
+    .checkbox-container {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
     }
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .links,
-    .spotify-container,
-    .contact-form,
-    .newsletter {
-        background-size: 50px 50px; /* Half size for retina displays */
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .title {
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+        font-size: 2.2rem;
+    }
+    
+    .container {
+        padding-top: 2rem;
     }
 }

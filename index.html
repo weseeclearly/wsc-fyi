@@ -1,62 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>We See Clearly</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>weseeclearly</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>we see clearly</h1>
-        </header>
-        
-        <nav class="links">
-            <a href="#" class="link-item">
-                <span class="link-text">Cloud Embassy</span>
-                <span class="link-description">Research & Development</span>
-            </a>
-            <a href="#" class="link-item">
-                <span class="link-text">Self0s</span>
-                <span class="link-description">Technical Experiments</span>
-            </a>
-            <a href="#" class="link-item">
-                <span class="link-text">Paintings</span>
-                <span class="link-description">Visual Works</span>
-            </a>
-        </nav>
+  <!-- Hidden SVG Definitions -->
+  <svg width="0" height="0" style="position: absolute;">
+    <defs>
+      <!-- Cloud Pattern: Inspired by thangka silk brocade borders -->
+      <pattern id="cloud-pattern" patternUnits="userSpaceOnUse" width="160" height="160">
+        <path d="M0,80 C40,40 120,40 160,80" stroke="#2c3e50" stroke-width="3" fill="none"/>
+        <path d="M0,100 C40,60 120,60 160,100" stroke="#34495e" stroke-width="2" fill="none"/>
+      </pattern>
+      <!-- Fire Pattern: Dynamic, flame-like curves -->
+      <pattern id="fire-pattern" patternUnits="userSpaceOnUse" width="160" height="160">
+        <path d="M0,120 C40,20 120,20 160,120" stroke="#8e1b1b" stroke-width="3" fill="none"/>
+        <path d="M0,140 C40,40 120,40 160,140" stroke="#a71d2a" stroke-width="2" fill="none"/>
+      </pattern>
+      <!-- Earth Pattern: Overlapping organic arcs -->
+      <pattern id="earth-pattern" patternUnits="userSpaceOnUse" width="160" height="160">
+        <path d="M0,60 C40,100 120,20 160,60" stroke="#4e342e" stroke-width="3" fill="none"/>
+        <path d="M0,80 C40,120 120,40 160,80" stroke="#6d4c41" stroke-width="2" fill="none"/>
+        <path d="M0,100 C40,140 120,60 160,100" stroke="#8d6e63" stroke-width="1.5" fill="none"/>
+      </pattern>
+    </defs>
+  </svg>
 
-        <section class="spotify-container">
-            <div class="section-header">current listening</div>
-            <iframe style="border-radius:12px" 
-                    src="https://open.spotify.com/embed/playlist/7ItUcUu7UdoV20akoN0EMt?utm_source=generator" 
-                    width="100%" 
-                    height="352" 
-                    frameBorder="0" 
-                    allowfullscreen="" 
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                    loading="lazy">
-            </iframe>
-        </section>
+  <div class="container">
+    <h1 class="title">weseeclearly</h1>
+    
+    <section class="links">
+      <svg class="pattern-bg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <rect width="100%" height="100%" fill="url(#cloud-pattern)" />
+      </svg>
+      <div class="section-content">
+        <a href="https://cloudembassy.org" class="link-item">
+          <span class="link-text">cloud embassy</span><br>
+          <span class="link-description">remembering a world</span>
+        </a>
+        <a href="https://self0s.net" class="link-item">
+          <span class="link-text">self0s</span><br>
+          <span class="link-description">transformational interfaces</span>
+        </a>
+        <a href="https://weseeclearly.com" class="link-item">
+          <span class="link-text">painting</span><br>
+          <span class="link-description">form & chromatic studies</span>
+        </a>
+      </div>
+    </section>
 
-        <section class="contact-form">
-            <div class="section-header">contact</div>
-            <form id="contact">
-                <input type="email" placeholder="email" required>
-                <textarea placeholder="message" required></textarea>
-                <button type="submit">send</button>
-            </form>
-        </section>
+    <section class="spotify-embed">
+      <svg class="pattern-bg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <rect width="100%" height="100%" fill="url(#fire-pattern)" />
+      </svg>
+      <div class="section-content">
+        <div class="section-header">current listening</div>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7ItUcUu7UdoV20akoN0EMt?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </section>
 
-        <section class="newsletter">
-            <div class="section-header">newsletter</div>
-            <form id="newsletter">
-                <input type="email" placeholder="join the newsletter" required>
-                <button type="submit">→</button>
-            </form>
-        </section>
-    </div>
-    <script src="main.js"></script>
+    <section class="contact">
+      <svg class="pattern-bg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <rect width="100%" height="100%" fill="url(#earth-pattern)" />
+      </svg>
+      <div class="section-content">
+        <div class="section-header">contact</div>
+        <form id="contactForm" class="contact-form">
+          <input type="text" name="name" placeholder="name" required>
+          <input type="email" name="email" placeholder="email" required>
+          <textarea name="message" placeholder="message" required></textarea>
+          <div class="form-footer">
+            <div class="checkbox-container">
+              <input type="checkbox" id="newsletter-signup" name="newsletter" checked>
+              <label for="newsletter-signup">receive research &amp; development updates</label>
+            </div>
+            <button type="submit">send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+  <script src="main.js"></script>
+  <script src="form-handler.js"></script>
 </body>
 </html>
