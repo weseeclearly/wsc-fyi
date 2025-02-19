@@ -1,0 +1,11 @@
+# Backup files
+*.backup
+*_backup_*
+dist/
+
+# IDE and system files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*~
