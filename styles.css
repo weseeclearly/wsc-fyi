@@ -410,35 +410,81 @@ h1 {
     display: inline-block;
 }
 
-/* Form Styles */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+/* Form styles */
+form[data-netlify="true"] {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid var(--border-inner);
-    border-radius: 2px;
-    background: rgba(255, 255, 255, 0.5);
-    font-family: var(--font-body);
+form[data-netlify="true"] p {
+  margin: 0;
+  width: 100%;
 }
 
-button {
-    padding: 0.8rem;
-    border: 1px solid var(--border-inner);
-    border-radius: 2px;
-    background: transparent;
-    color: var(--text-color);
-    cursor: pointer;
-    transition: all var(--transition-time) ease;
-    font-family: var(--font-body);
+form[data-netlify="true"] input[type="text"],
+form[data-netlify="true"] input[type="email"],
+form[data-netlify="true"] textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-inner);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-body);
+  color: var(--text-color);
 }
 
-button:hover {
-    background: rgba(255, 255, 255, 0.2);
+form[data-netlify="true"] input::placeholder,
+form[data-netlify="true"] textarea::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+}
+
+form[data-netlify="true"] textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+form[data-netlify="true"] .form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+form[data-netlify="true"] .newsletter-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  flex: 1;
+  min-width: 200px;
+  color: var(--text-color);
+}
+
+form[data-netlify="true"] input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+form[data-netlify="true"] button {
+  padding: 0.8rem;
+  border: 1px solid var(--border-inner);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all var(--transition-time) ease;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+
+form[data-netlify="true"] button:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Contact Form */
