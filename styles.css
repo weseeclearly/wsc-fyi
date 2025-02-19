@@ -430,6 +430,7 @@ h1 {
     background-color: rgba(255, 255, 255, 0.5);
     font-family: inherit;
     font-size: 0.9rem;
+    color: var(--deep-indigo);
 }
 
 .contact .section-content .contact-form textarea {
@@ -470,22 +471,29 @@ h1 {
     padding: 0.8rem 2rem;
     border: 1px solid var(--border-inner);
     border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: var(--deep-indigo);
     font-family: inherit;
     font-size: 0.9rem;
+    font-weight: 500;
     cursor: pointer;
     transition: all var(--transition-time) ease;
     white-space: nowrap;
 }
 
 .contact .section-content .contact-form button:hover {
-    background-color: var(--bg-links);
+    background-color: rgba(255, 255, 255, 0.9);
     transform: translateY(-1px);
 }
 
 .contact .section-content .contact-form button:active {
     transform: translateY(1px);
+}
+
+.contact .section-content .contact-form input::placeholder,
+.contact .section-content .contact-form textarea::placeholder {
+    color: var(--deep-indigo);
+    opacity: 0.8;
 }
 
 /* Responsive form adjustments */
