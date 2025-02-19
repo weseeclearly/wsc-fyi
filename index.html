@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="/">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZESH6CHXY"></script>
   <script>
@@ -14,7 +13,7 @@
     gtag('config', 'G-FZESH6CHXY');
   </script>
   <title>weseeclearly</title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="styles.css?v=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
@@ -81,7 +80,7 @@
       </svg>
       <div class="section-content">
         <div class="section-header">contact</div>
-        <form name="contact" method="POST" data-netlify="true">
+        <form name="contact" method="POST" data-netlify="true" class="contact-form">
           <input type="hidden" name="form-name" value="contact">
           <p>
             <input type="text" name="name" placeholder="name" required>
