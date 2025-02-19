@@ -412,114 +412,105 @@ h1 {
 }
 
 /* Form styles */
-form[data-netlify="true"] {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
+.contact .section-content .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-form[data-netlify="true"] p {
-  margin: 0;
-  width: 100%;
+.contact .section-content .contact-form input[type="text"],
+.contact .section-content .contact-form input[type="email"],
+.contact .section-content .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-inner);
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-family: inherit;
+    font-size: 0.9rem;
 }
 
-form[data-netlify="true"] input[type="text"],
-form[data-netlify="true"] input[type="email"],
-form[data-netlify="true"] textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid var(--border-inner);
-  border-radius: 2px;
-  background-color: rgba(255, 255, 255, 0.5);
-  font-family: inherit;
-  font-size: 0.9rem;
-  color: var(--text-color);
+.contact .section-content .contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
-form[data-netlify="true"] input::placeholder,
-form[data-netlify="true"] textarea::placeholder {
-  color: rgba(0, 0, 0, 0.7);
-  opacity: 1;
+.contact .section-content .contact-form .form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
 }
 
-form[data-netlify="true"] textarea {
-  min-height: 120px;
-  resize: vertical;
+.contact .section-content .contact-form .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
 }
 
-form[data-netlify="true"] .form-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+.contact .section-content .contact-form .checkbox-container input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
 }
 
-form[data-netlify="true"] .newsletter-label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex: 1;
-  font-size: 0.85rem;
-  color: var(--text-color);
-  opacity: 0.9;
-  cursor: pointer;
-  user-select: none;
+.contact .section-content .contact-form .checkbox-container label {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    cursor: pointer;
+    user-select: none;
 }
 
-form[data-netlify="true"] input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  margin: 0;
-  cursor: pointer;
+.contact .section-content .contact-form button {
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--border-inner);
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all var(--transition-time) ease;
+    white-space: nowrap;
 }
 
-form[data-netlify="true"] button {
-  padding: 0.8rem 2rem;
-  border: 1px solid var(--border-inner);
-  border-radius: 2px;
-  background-color: rgba(255, 255, 255, 0.5);
-  color: var(--text-color);
-  font-family: inherit;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all var(--transition-time) ease;
-  white-space: nowrap;
+.contact .section-content .contact-form button:hover {
+    background-color: var(--bg-links);
+    transform: translateY(-1px);
 }
 
-form[data-netlify="true"] button:hover {
-  background-color: var(--bg-links);
-  transform: translateY(-1px);
-}
-
-form[data-netlify="true"] button:active {
-  transform: translateY(1px);
+.contact .section-content .contact-form button:active {
+    transform: translateY(1px);
 }
 
 /* Responsive form adjustments */
 @media (max-width: 600px) {
-  form[data-netlify="true"] {
+  .contact .section-content .contact-form {
     gap: 1rem;
   }
 
-  form[data-netlify="true"] .form-footer {
+  .contact .section-content .contact-form .form-footer {
     flex-direction: column;
     gap: 1rem;
     align-items: flex-start;
   }
 
-  form[data-netlify="true"] button {
+  .contact .section-content .contact-form button {
     width: 100%;
     padding: 0.8rem 1rem;
   }
 
-  form[data-netlify="true"] .newsletter-label {
+  .contact .section-content .contact-form .checkbox-container {
     width: 100%;
     padding: 0.5rem 0;
   }
 
-  form[data-netlify="true"] input[type="checkbox"] {
+  .contact .section-content .contact-form .checkbox-container input[type="checkbox"] {
     width: 20px;
     height: 20px;
   }
