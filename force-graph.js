@@ -37,54 +37,7 @@ const height = 100;
 
 const svg = d3.select("#force-graph")
     .append("svg")
-    .attr("viewBox", [0, 0, width, height])
-    .call(d3.drag()
-        .subject(event => {
-            const point = d3.pointer(event, svg.node());
-            const [x, y] = point;
-            // Find the closest node within bounds
-            const padding = 10;
-            const nodes = simulation.nodes();
-            const closest = nodes.find(n => 
-                Math.abs(n.x - x) < 30 && 
-                Math.abs(n.y - y) < 30 &&
-                x >= padding && 
-                x <= width - padding && 
-                y >= padding && 
-                y <= height - padding
-            );
-            if (closest) {
-                closest.x = x;
-                closest.y = y;
-                return closest;
-            }
-        })
-        .on("drag", dragged));
-
-// Create the force simulation
-const simulation = d3.forceSimulation(nodes)
-    .force("link", d3.forceLink(links)
-        .id(d => d.id)
-        .distance(20)
-        .strength(link => link.value))
-    .force("charge", d3.forceManyBody().strength(-100))
-    .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("collision", d3.forceCollide().radius(25))
-    .force("bounds", () => {
-        const horizontalPadding = 10;
-        const verticalPadding = 15;  // Slightly more vertical padding
-        for (let node of nodes) {
-            node.x = Math.max(horizontalPadding, Math.min(width - horizontalPadding, node.x));
-            node.y = Math.max(verticalPadding, Math.min(height - verticalPadding, node.y));
-        }
-    });
-
-// Function to create diamond path
-function diamondPath(size) {
-    const s = size;
-    // Creates a more contracted diamond shape
-    return `M 0,-${s/2} L ${s/3},0 L 0,${s/2} L -${s/3},0 Z`;
-}
+    .attr("viewBox", [0, 0, width, height]);
 
 // Create the links
 const link = svg.append("g")
@@ -100,7 +53,11 @@ const node = svg.append("g")
     .selectAll("g")
     .data(nodes)
     .join("g")
-    .attr("class", "letter-node");
+    .call(d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended)
+    );
 
 // Add stars behind letters
 node.append("path")
@@ -119,6 +76,31 @@ node.append("text")
     .attr("font-size", "24px")
     .attr("filter", "drop-shadow(0 0 2px rgba(103, 169, 247, 0.2))")
     .text(d => d.letter);
+
+// Function to create diamond path
+function diamondPath(size) {
+    const s = size;
+    // Creates a more contracted diamond shape
+    return `M 0,-${s/2} L ${s/3},0 L 0,${s/2} L -${s/3},0 Z`;
+}
+
+// Create the force simulation
+const simulation = d3.forceSimulation(nodes)
+    .force("link", d3.forceLink(links)
+        .id(d => d.id)
+        .distance(20)
+        .strength(link => link.value))
+    .force("charge", d3.forceManyBody().strength(-100))
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("collision", d3.forceCollide().radius(25))
+    .force("bounds", () => {
+        const horizontalPadding = 10;
+        const verticalPadding = 15;  // Slightly more vertical padding
+        for (let node of nodes) {
+            node.x = Math.max(horizontalPadding, Math.min(width - horizontalPadding, node.x));
+            node.y = Math.max(verticalPadding, Math.min(height - verticalPadding, node.y));
+        }
+    });
 
 // Update function
 function ticked() {
@@ -142,13 +124,27 @@ function ticked() {
 
 simulation.on("tick", ticked);
 
-// Drag function
-function dragged(event) {
-    const horizontalPadding = 10;
-    const verticalPadding = 15;  // Slightly more vertical padding
-    event.subject.x = Math.max(horizontalPadding, Math.min(width - horizontalPadding, event.x));
-    event.subject.y = Math.max(verticalPadding, Math.min(height - verticalPadding, event.y));
-    simulation.alpha(1).restart();
+// Drag functions
+function dragstarted(event, d) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+}
+
+function dragged(event, d) {
+    // Handle both mouse and touch events
+    const pointer = event.sourceEvent.touches ? event.sourceEvent.touches[0] : event.sourceEvent;
+    const coordinates = d3.pointer(pointer, svg.node());
+    const padding = 10;
+    const padding_y = 15;
+    d.fx = Math.max(padding, Math.min(width - padding, coordinates[0]));
+    d.fy = Math.max(padding_y, Math.min(height - padding_y, coordinates[1]));
+}
+
+function dragended(event, d) {
+    if (!event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
 }
 
 // Animation loop
