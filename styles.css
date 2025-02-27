@@ -300,6 +300,7 @@ body {
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 1.5rem;
     opacity: 0.9;
+    font-size: 0.89rem;
 }
 
 .section-header::before {
@@ -312,6 +313,11 @@ body {
     height: 70%;
     background: rgba(255, 255, 255, 0.4);
     opacity: 0.9;
+    transition: height 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.section-header:hover::before {
+    height: 85%;
 }
 
 /* Unique colors for different sections */
@@ -409,6 +415,30 @@ body {
 
 .spotify-embed {
     background: var(--gradient-link-item);
+    position: relative;
+}
+
+.spotify-embed iframe {
+    background-color: transparent !important;
+    box-shadow: var(--ambient-glow);
+    transition: all var(--transition-time) ease;
+}
+
+.spotify-embed::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-gradient-3);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.spotify-embed .section-content {
+    position: relative;
+    z-index: 2;
 }
 
 .contact {
@@ -419,10 +449,12 @@ body {
     background-image: none;
 }
 
+/* Link refinements - million dollar subtlety */
 .link-item {
-    display: block;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 1.65rem 1.85rem;
+    margin-bottom: 1.35rem;
     text-decoration: none;
     color: var(--text-color);
     background: linear-gradient(165deg,
@@ -431,7 +463,116 @@ body {
     );
     border: var(--border-ethereal);
     border-radius: 4px;
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.link-content {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+/* Logo styling - small, right-aligned with subtle effects */
+.link-logo-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    opacity: 0.3;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Alternative centered version of the logos */
+.link-logo-wrapper.centered {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    opacity: 0.3;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Cloud Embassy Logo */
+.link-logo {
+    width: 83%;
+    height: 83%;
+    opacity: 0.18;
+    filter: 
+        brightness(1.6) 
+        contrast(0.85) 
+        blur(1.5px);
+    mix-blend-mode: overlay;
+    transform: translateX(13%) translateY(-10%);
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.link-item:hover .link-logo {
+    opacity: 0.28;
+    filter: 
+        brightness(1.7) 
+        contrast(0.9) 
+        blur(0.5px);
+    transform: translateX(13%) translateY(-10%) scale(0.95);
+}
+
+/* WSC Logo - specific adjustments */
+.wsc-logo {
+    width: 58%;
+    height: 58%;
+    opacity: 0.18;
+    filter: 
+        brightness(1.6) 
+        contrast(0.85) 
+        blur(1.5px);
+    mix-blend-mode: overlay;
+    transform: translateX(0%) translateY(0%);
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.link-item:hover .wsc-logo {
+    opacity: 0.28;
+    filter: 
+        brightness(1.7) 
+        contrast(0.9) 
+        blur(0.5px);
+    transform: translateX(0%) translateY(0%) scale(0.95);
+}
+
+/* Self0s Logo - specific adjustments */
+.self0s-logo {
+    width: 60%;
+    height: 60%;
+    opacity: 0.18;
+    filter: 
+        brightness(1.6) 
+        contrast(0.85) 
+        blur(1.5px);
+    mix-blend-mode: overlay;
+    transform: translateX(0%) translateY(0%);
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.link-item:hover .self0s-logo {
+    opacity: 0.28;
+    filter: 
+        brightness(1.7) 
+        contrast(0.9) 
+        blur(0.5px);
+    transform: translateX(0%) translateY(0%) scale(0.95);
 }
 
 .link-item::before {
@@ -442,39 +583,80 @@ body {
     right: 0;
     bottom: 0;
     background: linear-gradient(135deg,
-        rgba(77, 140, 218, 0.1) 0%,
+        rgba(77, 140, 218, 0.08) 0%,
         transparent 100%
     );
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 1;
+}
+
+.link-item::after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    bottom: 1.2rem;
+    left: 1.85rem;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.2) 0%, 
+        rgba(255, 255, 255, 0.07) 100%
+    );
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 1;
 }
 
 .link-item:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px) scale(1.005);
     background: linear-gradient(165deg,
-        rgba(103, 169, 247, 0.2) 0%,
+        rgba(103, 169, 247, 0.12) 0%,
         rgba(35, 48, 82, 0.95) 100%
     );
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.18);
     box-shadow: 
-        0 5px 15px rgba(16, 24, 45, 0.2),
-        0 0 30px rgba(103, 169, 247, 0.1);
+        0 6px 16px rgba(16, 24, 45, 0.15),
+        0 0 35px rgba(103, 169, 247, 0.08);
 }
 
 .link-item:hover::before {
     opacity: 1;
 }
 
+.link-item:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
 .link-text {
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1.15rem;
+    font-weight: 400;
+    letter-spacing: 0.015em;
     display: block;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.6rem;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .link-description {
-    font-size: 0.9rem;
-    opacity: 0.7;
+    font-size: 0.92rem;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    opacity: 0.75;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateY(0);
+}
+
+.link-item:hover .link-text {
+    transform: translateY(-1px);
+    letter-spacing: 0.02em;
+}
+
+.link-item:hover .link-description {
+    opacity: 0.85;
+    transform: translateY(1px);
 }
 
 /* Form styles */
