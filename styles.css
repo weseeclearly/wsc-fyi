@@ -520,6 +520,11 @@ body {
     transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+/* Hide Cloud Embassy link temporarily */
+.link-item:first-child {
+    display: none;
+}
+
 .link-item:hover .link-logo {
     opacity: 0.28;
     filter: 
@@ -951,4 +956,119 @@ button:disabled {
 
 .rainbow-prism {
     animation: prismShift 4s ease-in-out infinite;
+}
+
+/* Social Media Section */
+.social-media {
+    background: var(--gradient-link-item);
+    position: relative;
+    overflow: hidden;
+    border: var(--border-ethereal);
+    border-radius: 2px;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.social-media::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-gradient-3);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.social-media .section-content {
+    position: relative;
+    z-index: 2;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+        rgba(103, 169, 247, 0.1) 0%,
+        transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.social-icon:hover {
+    color: rgba(255, 255, 255, 0.95);
+    border-color: rgba(103, 169, 247, 0.4);
+    background: rgba(103, 169, 247, 0.08);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 
+        0 6px 16px rgba(16, 24, 45, 0.15),
+        0 0 35px rgba(103, 169, 247, 0.12);
+}
+
+.social-icon:hover::before {
+    opacity: 1;
+}
+
+.social-svg {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover .social-svg {
+    transform: scale(1.1);
+}
+
+/* Instagram specific hover effect */
+.social-icon:first-child:hover {
+    background: linear-gradient(135deg,
+        rgba(225, 48, 108, 0.15) 0%,
+        rgba(255, 88, 0, 0.1) 50%,
+        rgba(255, 0, 128, 0.15) 100%
+    );
+    border-color: rgba(225, 48, 108, 0.4);
+}
+
+/* YouTube specific hover effect */
+.social-icon:last-child:hover {
+    background: linear-gradient(135deg,
+        rgba(255, 0, 0, 0.15) 0%,
+        rgba(255, 0, 0, 0.1) 100%
+    );
+    border-color: rgba(255, 0, 0, 0.4);
 }
